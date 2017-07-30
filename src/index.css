@@ -1,0 +1,304 @@
+/* ---------- */
+/* Animations */
+/* ---------- */
+
+@keyframes activate-voting-btn {
+  to {border: solid 2px #00ffe0;}
+}
+
+@keyframes activate-estimating-btn {
+  to {border: solid 2px #ffb200; color: #ffb200}
+}
+
+@keyframes activate-add-btn {
+  to {background: #4f88e2; color: #fff}
+}
+
+@keyframes waiting {
+  to {border: solid 2px #00ffe0;}
+}
+
+/* ------- */
+/* General */
+/* ------- */
+
+body {
+  margin: 0 auto;
+  padding: 0 10px;
+  font-family: sans-serif;
+  color: #555;
+  max-width: 1000px;
+}
+
+h1, h2 {
+  text-align: center;
+  font-weight: normal;
+}
+
+h2 {
+  margin: 0;
+  padding: 3% 0 0 0;
+}
+
+::selection {
+  color: #fff;
+  background: #f7661d;
+}
+
+/* -------- */
+/* Add Task */
+/* -------- */
+/* Component shown to organizer when there is no task available */
+
+.add-task {
+  margin-bottom: 20px;
+  padding: 0 1.8%;
+}
+
+/* Add Task - Form  */
+
+.add-task form {
+  display: flex;
+  justify-content: center;
+  border: solid 2px #4f88e2;
+  border-radius: 15px;
+}
+
+.add-task form:focus {
+  border: solid 2px #00ffe0;
+}
+
+/* Add Task - Input field */
+
+.add-task input {
+  border: none;
+  flex-grow: 7;
+  font-size: 1.7em;
+  margin: 4px 15px;
+}
+
+.add-task input:focus {
+  outline: none;
+}
+
+/* Add Task - Send button */
+
+.add-btn {
+  flex-grow: 1;
+  border: none;
+  border-left: solid 2px #4f88e2;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  font-size: 1.5em;
+  color: #4f88e2;
+  background: #fff;
+}
+
+.add-btn:hover {
+   animation: activate-add-btn 0.2s forwards ease-out; 
+} 
+
+.add-btn:focus {
+  outline: none;
+}
+
+
+/* ------ */
+/* Voting */
+/* ------ */
+/* Component shown when there is a task available for voting */
+
+.voting {
+  text-align: center;  
+}
+
+.now-voting {
+  margin-bottom: 20px;
+}
+
+.task-title {
+  font-size: 3em;
+  font-weight: lighter;
+  word-wrap: break-word;
+}
+
+.voting-title {
+  color: #4f88e2;
+}
+
+.estimating-title {
+  color: #f7661d;  
+}
+
+/* Voting - Wrapper div for voting buttons  */
+
+.voting-buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Voting - Individual voting buttons */
+
+.voting-btn {
+  min-width: 80px;
+  font-size: 3em;
+  border-radius: 15px;
+  margin: 10px;
+  background: none;
+  color: #4f88e2;
+  border: solid 2px #4f88e2;
+}
+
+.voting-btn span {
+  display: block;
+  font-size: 0.5em;
+}
+
+.voting-btn:hover {
+  animation: activate-voting-btn 0.2s forwards ease-out;
+}
+
+.voting-btn:focus {
+   outline: none;
+}
+
+.reveal-btn {
+  margin-top: 10px;
+  padding: 8px;
+  border: solid 2px #f7661d;
+  border-radius: 15px;
+  font-size: 1.5em;
+  color: #f7661d;
+  background: #fff;
+}
+
+.reveal-btn:focus {
+  outline: none;
+}
+
+.reveal-btn:hover {
+  animation: activate-estimating-btn 0.2s forwards ease-out;  
+}
+
+
+/* Voting - Estimating buttons
+The 'voting-btn' class is changed to 'estimating-btn' one the votes are revealed. */
+
+.estimating-btn {
+  min-width: 80px;
+  font-size: 3em;
+  border-radius: 15px;
+  margin: 10px;
+  background: none;
+  color: #f7661d;
+  border: solid 2px #f7661d;
+}
+
+.estimating-btn span {
+  display: block;
+  font-size: 0.5em;
+}
+
+.estimating-btn:focus {
+   outline: none;
+}
+
+.estimating-btn:hover {
+  animation: activate-estimating-btn 0.2s forwards ease-out;
+}
+
+
+/* -------------- */
+/* Waiting screen */
+/* -------------- */
+/* Component shown while there is no task to be displayed. */
+
+.waiting {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 15px;
+  padding: 10px 30px;
+  border: solid 2px #4f88e2;  
+  animation: waiting 2s ease-in alternate;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+}
+
+
+/* --------- */
+/* Task List */
+/* --------- */
+/* Shows all estimated activities */
+
+.task-history {
+  margin: 20px auto;
+}
+
+.task-history .title {
+  color: #4f88e2;
+}
+
+.task-history-items {
+  text-align: center;
+  border: solid 2px #4f88e2;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 0 20px;
+}
+
+.task-history .title {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.task-history-item {
+  max-width: 90%;
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 1.4em;
+  border: solid 2px #4f88e2;
+  border-radius: 15px;
+  word-wrap: break-word;  
+}
+
+/* --- */
+/* 404 */
+/* --- */
+
+.page-not-found {
+  text-align: center;  
+}
+
+.page-not-found img {
+  position: relative;
+}
+
+.page-not-found span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  font-size: 10em;
+  margin-top: 20px;
+}
+
+
+/* ------------- */
+/* Media queries */
+/* ------------- */
+/* Making the site more responsive on smaller screens */
+
+@media screen and (max-width: 480px) {
+
+    .add-task input {
+      margin: 4px 5px;
+      border-radius: 15px;
+    }
+
+    .add-btn {
+      display: none;
+    }
+}
