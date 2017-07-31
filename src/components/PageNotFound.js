@@ -6,7 +6,7 @@ function PageNotFound() {
         <div className="page-not-found">
             <div>
                 <span>404</span>
-                <img src={NotFoundImg} alt="obi-wan sliding broken image link by using the force" />
+                <img src={NotFoundImg} alt="obi-wan sliding broken link by using the force" />
             </div>
             <h1>This is not the page you are looking for.</h1>
         </div>
