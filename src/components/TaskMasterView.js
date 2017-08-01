@@ -9,7 +9,7 @@ function TaskMasterView() {
         <div className="task-master container">
             <AddTask />
             <VotingContainer taskmaster />
-            <TaskHistoryContainer />
+            <TaskHistoryContainer taskmaster />
         </div>
     )
 }

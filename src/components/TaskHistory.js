@@ -4,7 +4,7 @@ import {List} from 'immutable'
 
 import ClearTasksButton from './ClearTasksButton'
 
-export default function TaskHistory({tasks, clearTasks}) {
+export default function TaskHistory({tasks, clearTasks, taskmaster}) {
     tasks = tasks || []
 
     const taskList = tasks.map(task => {
@@ -28,7 +28,7 @@ export default function TaskHistory({tasks, clearTasks}) {
             {
                 (tasks === [] || tasks === List()) ?
                 null :
-                <ClearTasksButton />
+                taskmaster && <ClearTasksButton />
             }
         </div>
     )
