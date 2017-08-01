@@ -4,7 +4,8 @@ import * as actionCreators from '../actions'
 
 import VotingButton from './VotingButton'
 import Waiting from './Waiting'
-import Reveal from './Reveal'
+import RevealButton from './RevealButton'
+import CancelTaskButton from './CancelTaskButton'
 import {OPTIONS} from '../settings'
 
 export default function Voting({task, vote, revealed, hasVoted, estimate, taskmaster}) {
@@ -21,6 +22,7 @@ export default function Voting({task, vote, revealed, hasVoted, estimate, taskma
                 handleClick={handleClick}
                 active={hasVoted === option}
                 revealed={revealed}
+                taskmaster={taskmaster}
                 tally={
                     task && task.get('tally') ?
                     task.get('tally').get(option.toString()) :
@@ -46,7 +48,8 @@ export default function Voting({task, vote, revealed, hasVoted, estimate, taskma
                     <div className="voting-buttons">
                         {votingButtons}
                     </div>
-                    {(!revealed && taskmaster) && <Reveal />}
+                    {(taskmaster && task) && <CancelTaskButton />}
+                    {(!revealed && taskmaster) && <RevealButton />}
                 </div> :
                 !taskmaster && <Waiting />
             }

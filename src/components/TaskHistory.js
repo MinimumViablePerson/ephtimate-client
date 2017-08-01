@@ -2,8 +2,11 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {List} from 'immutable'
 
-export default function TaskHistory({tasks}) {
+import ClearTasksButton from './ClearTasksButton'
+
+export default function TaskHistory({tasks, clearTasks}) {
     tasks = tasks || []
+
     const taskList = tasks.map(task => {
         const title = task.get('title')
         const estimate = task.get('estimate')
@@ -11,16 +14,22 @@ export default function TaskHistory({tasks}) {
                 {`${title} (${estimate})`}
                </div>
     })
+
     return (
         <div className="task-history">
-            <h2 className="title">Task History</h2>        
+            <h2 className="title">Estimated Tasks</h2>        
             <div className="task-history-items">
                 {
-                    (taskList === [] || taskList === List()) ?
+                    (tasks === [] || tasks === List()) ?
                     "You don't have any estimated tasks yet." :
                     taskList
                 }
             </div>
+            {
+                (tasks === [] || tasks === List()) ?
+                null :
+                <ClearTasksButton />
+            }
         </div>
     )
 }
@@ -31,4 +40,6 @@ function mapStateToProps(state) {
     }
 }
 
-export const TaskHistoryContainer = connect(mapStateToProps)(TaskHistory)
+export const TaskHistoryContainer = connect(
+    mapStateToProps
+)(TaskHistory)

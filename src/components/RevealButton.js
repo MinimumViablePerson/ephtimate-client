@@ -4,9 +4,9 @@ import {connect} from 'react-redux'
 import {reveal} from '../actions'
 import {countVotes} from '../helpers'
 
-let Reveal = ({dispatch, revealed, votes}) => {
+let RevealButton = ({dispatch, revealed, votes}) => {
     return (
-        <button className="reveal-btn"
+        <button className="primary-btn"
                 onClick={revealed ? null : () => dispatch(reveal())}>
             Reveal Votes ({votes})
         </button>
@@ -20,6 +20,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-Reveal = connect(mapStateToProps)(Reveal)
+RevealButton = connect(mapStateToProps)(RevealButton)
 
-export default Reveal
+export default RevealButton

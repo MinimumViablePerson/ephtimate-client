@@ -5,14 +5,6 @@ export function setState(state) {
     }
 }
 
-export function addTask(title) {
-    return {
-        meta: {remote: true},
-        type: 'ADD_TASK',
-        title
-    }
-}
-
 export function vote(estimate, hasVoted) {
     return {
         meta: {remote: true},
@@ -35,5 +27,27 @@ export function estimate(title, estimation) {
         type: 'ESTIMATE',
         estimate: estimation,
         title
+    }
+}
+
+export function addTask(title) {
+    return {
+        meta: {remote: true},
+        type: 'ADD_TASK',
+        title
+    }
+}
+
+export function cancelTask() {
+    return {
+        meta: {remote: true},
+        type: 'CANCEL_TASK',
+    }
+}
+
+export function clearTasks() {
+    return {
+        meta: {remote: true},
+        type: 'CLEAR_TASKS',
     }
 }
