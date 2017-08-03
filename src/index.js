@@ -8,7 +8,6 @@ import {BrowserRouter} from 'react-router-dom'
 import reducer from './reducer'
 import {setState} from './actions'
 import App from './components/App'
-import registerServiceWorker from './registerServiceWorker'
 import remoteActionMiddleware from './remote_action_middleware'
 import './index.css'
 import {SERVER} from './settings'
@@ -35,5 +34,3 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 )
-
-registerServiceWorker()
