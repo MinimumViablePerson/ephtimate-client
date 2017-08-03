@@ -20,18 +20,12 @@ function resetVote(state) {
     return state
 }
 
-function estimate(state) {
-    return state.remove('task')
-}
-
 export default function reducer(state=Map(), action) {
     switch (action.type) {
     case 'SET_STATE':
         return resetVote(setState(state, action.state))
     case 'VOTE':
         return vote(state, action.estimate)
-    case 'ESTIMATE':
-        return estimate(state)
     default:
         return state
     }
