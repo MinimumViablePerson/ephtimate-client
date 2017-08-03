@@ -15,7 +15,7 @@ function vote(state, estimate) {
 function resetVote(state) {
     const task = state.get('task')
     if (task.isEmpty()) {
-        window.localStorage.hasVoted = false
+        window.localStorage.removeItem('hasVoted')
     }
     return state
 }

@@ -10,9 +10,7 @@ import {OPTIONS} from '../settings'
 
 export default function Voting({task, vote, revealed, estimate, taskmaster}) {
     const hasVoted = window.localStorage.hasVoted
-
-    window.getVote = () => {console.log(hasVoted)}
-
+    
     const handleClick = (option) => {
         if (revealed && taskmaster) estimate(task.get('title'), option)
         else if (!revealed) vote(option, hasVoted)
