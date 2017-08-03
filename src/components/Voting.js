@@ -8,7 +8,10 @@ import RevealButton from './RevealButton'
 import CancelTaskButton from './CancelTaskButton'
 import {OPTIONS} from '../settings'
 
-export default function Voting({task, vote, revealed, hasVoted, estimate, taskmaster}) {
+export default function Voting({task, vote, revealed, estimate, taskmaster}) {
+    const hasVoted = window.localStorage.hasVoted
+
+    window.getVote = () => {console.log(hasVoted)}
 
     const handleClick = (option) => {
         if (revealed && taskmaster) estimate(task.get('title'), option)
@@ -20,7 +23,7 @@ export default function Voting({task, vote, revealed, hasVoted, estimate, taskma
                 key={option}
                 option={option}
                 handleClick={handleClick}
-                active={hasVoted === option}
+                hasVoted={hasVoted}
                 revealed={revealed}
                 taskmaster={taskmaster}
                 tally={
@@ -61,7 +64,6 @@ function mapStateToProps(state) {
     return {
         task: state.get('task'),
         revealed: state.get('revealed'),
-        hasVoted: state.get('hasVoted')
     }
 }
 

@@ -7,7 +7,7 @@ function setState(state, newState) {
 function vote(state, estimate) {
     const task = state.get('task')
     if (task) {
-        return state.set('hasVoted', estimate)
+        window.localStorage.hasVoted = estimate
     }
     return state
 }
@@ -15,7 +15,7 @@ function vote(state, estimate) {
 function resetVote(state) {
     const task = state.get('task')
     if (task.isEmpty()) {
-        return state.set('hasVoted', false)
+        window.localStorage.hasVoted = false
     }
     return state
 }

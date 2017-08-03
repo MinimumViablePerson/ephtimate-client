@@ -172,6 +172,11 @@ button:focus {
    outline: none;
 }
 
+.voting-btn.active {
+  color: #00c7ff;
+  border: solid 2px #00c7ff;
+}
+
 .primary-btn {
   margin-top: 10px;
   padding: 8px;
