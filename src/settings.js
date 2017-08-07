@@ -7,7 +7,7 @@ const SERVER_OPTIONS = {
     ef_network: 'http://10.24.204.177:8027/',    
     local: 'http://localhost:8027',
     remote: 'https://ephtimate.herokuapp.com/:8027',
-    ec2: 'http://35.176.197.70:8027'
+    ec2: 'http://35.177.30.115:8027'
 }
 
 export const SERVER = SERVER_OPTIONS.ec2
