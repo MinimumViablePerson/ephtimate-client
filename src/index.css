@@ -242,7 +242,7 @@ The 'voting-btn' class is changed to 'estimating-btn' one the votes are revealed
 /* Component shown while there is no task to be displayed. */
 
 .waiting {
-  width: 300px;
+  max-width: 280px;
   margin: 0 auto;
   text-align: center;
   border-radius: 15px;

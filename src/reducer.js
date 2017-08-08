@@ -1,4 +1,9 @@
-import {Map} from 'immutable'
+import {fromJS} from 'immutable'
+
+const INITIAL_STATE = fromJS({
+    task: {},
+    tasks: []
+})
 
 function setState(state, newState) {
     return state.merge(newState)
@@ -20,7 +25,7 @@ function resetVote(state) {
     return state
 }
 
-export default function reducer(state=Map(), action) {
+export default function reducer(state=INITIAL_STATE, action) {
     switch (action.type) {
     case 'SET_STATE':
         return resetVote(setState(state, action.state))

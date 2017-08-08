@@ -21,7 +21,8 @@ let AddTask = ({dispatch, task}) => {
             </form>
         </div>
     )
-    return (task && task.isEmpty()) ? addTaskElement : null
+
+    return task.isEmpty() ? addTaskElement : null
 }
 
 const mapStateToProps = (state) => {

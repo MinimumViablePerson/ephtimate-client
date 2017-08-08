@@ -1,15 +1,15 @@
 import React from 'react'
 
 import AddTask from './AddTask'
-import {VotingContainer} from './Voting'
-import {TaskHistoryContainer} from './TaskHistory'
+import Voting from './Voting'
+import TaskHistory from './TaskHistory'
 
 function TaskMasterView() {
     return (
         <div className="task-master container">
             <AddTask />
-            <VotingContainer taskmaster />
-            <TaskHistoryContainer taskmaster />
+            <Voting taskmaster />
+            <TaskHistory taskmaster />
         </div>
     )
 }

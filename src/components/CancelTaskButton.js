@@ -1,16 +1,25 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {cancelTask} from '../actions'
+import * as actionCreators from '../actions'
 
-let CancelTaskButton = ({dispatch}) => {
-    return (
-        <button className="secondary-btn" onClick={() => dispatch(cancelTask())}>
+let CancelTaskButton = ({task, cancelTask}) => {
+    return task.isEmpty() ?
+        null :
+        <button className="secondary-btn" onClick={cancelTask}>
             Cancel Task
         </button>
-    )
 }
 
-CancelTaskButton = connect()(CancelTaskButton)
+const mapStateToProps = (state) => {
+    return {
+        task: state.get('task')
+    }
+}
+
+CancelTaskButton = connect(
+    mapStateToProps,
+    actionCreators
+)(CancelTaskButton)
 
 export default CancelTaskButton

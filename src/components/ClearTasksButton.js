@@ -1,15 +1,25 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {clearTasks} from '../actions'
 
-let ClearTasksButton = ({dispatch}) => {
-    return (
-        <button className="primary-btn" onClick={() => dispatch(clearTasks())}>
+import * as actionCreators from '../actions'
+
+let ClearTasksButton = ({tasks, clearTasks}) => {
+    return tasks.isEmpty() ?
+        null :
+        <button className="primary-btn" onClick={clearTasks}>
             Clear Tasks
         </button>
-    )
 }
 
-ClearTasksButton = connect()(ClearTasksButton)
+const mapStateToProps = (state) => {
+    return {
+        tasks: state.get('tasks')
+    }
+}
+
+ClearTasksButton = connect(
+    mapStateToProps,
+    actionCreators
+)(ClearTasksButton)
 
 export default ClearTasksButton
