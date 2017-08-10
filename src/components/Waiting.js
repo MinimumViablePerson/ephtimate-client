@@ -1,4 +1,5 @@
 import React from 'react'
+
 import WaitingImg from '../assets/waiting.gif'
 
 export default function Waiting() {

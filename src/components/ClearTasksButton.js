@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import * as actionCreators from '../actions'
 
-let ClearTasksButton = ({tasks, clearTasks}) => {
+export function ClearTasksButton({tasks, clearTasks}) {
     return tasks.isEmpty() ?
         null :
         <button className="primary-btn" onClick={clearTasks}>
@@ -17,9 +17,9 @@ const mapStateToProps = (state) => {
     }
 }
 
-ClearTasksButton = connect(
+const ClearTasksButtonContainer = connect(
     mapStateToProps,
     actionCreators
 )(ClearTasksButton)
 
-export default ClearTasksButton
+export default ClearTasksButtonContainer

@@ -1,16 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import io from 'socket.io-client'
 import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
-import io from 'socket.io-client'
 import {BrowserRouter} from 'react-router-dom'
 
-import reducer from './reducer'
-import {setState} from './actions'
 import App from './components/App'
+import reducer from './reducer'
 import remoteActionMiddleware from './remote_action_middleware'
-import './index.css'
+import {setState} from './actions'
 import {SERVER} from './settings'
+import './index.css'
 
 const socket = io(SERVER)
 
@@ -26,8 +26,6 @@ const store = createStoreWithMiddleware(
     reducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
-
-window.store = store
 
 ReactDOM.render(
     <Provider store={store}>

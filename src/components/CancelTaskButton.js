@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import * as actionCreators from '../actions'
 
-let CancelTaskButton = ({task, cancelTask}) => {
+export function CancelTaskButton({task, cancelTask}) {
     return task.isEmpty() ?
         null :
         <button className="secondary-btn" onClick={cancelTask}>
@@ -17,9 +17,9 @@ const mapStateToProps = (state) => {
     }
 }
 
-CancelTaskButton = connect(
+const CancelTaskButtonContainer = connect(
     mapStateToProps,
     actionCreators
 )(CancelTaskButton)
 
-export default CancelTaskButton
+export default CancelTaskButtonContainer

@@ -3,7 +3,8 @@ import {connect} from 'react-redux'
 
 import * as actionCreators from '../actions'
 
-let VotingButton = ({option, tally, revealed, taskmaster, vote, estimate, task}) => {
+export function VotingButton({option, tally, revealed, taskmaster, vote, estimate, task}) {
+
     const hasVoted = window.localStorage.hasVoted
     
     const handleClick = (option) => {
@@ -14,12 +15,16 @@ let VotingButton = ({option, tally, revealed, taskmaster, vote, estimate, task})
     const className = (revealed ? 'estimating-btn' : 'voting-btn') +
                       (taskmaster ? ' taskmaster' : '') +
                       ((option === hasVoted) ? ' active' : '')
+
     return (
         <button
             className={className}
             onClick={() => handleClick(option)} >
+
             <h2>{option}</h2>
+
             {revealed ? <span>{tally.get(option)}</span> : null}
+
         </button>
     )
 
@@ -33,9 +38,9 @@ const mapStateToProps = (state) => {
     }
 }
 
-VotingButton = connect(
+const VotingButtonContainer = connect(
     mapStateToProps,
     actionCreators
 )(VotingButton)
 
-export default VotingButton
+export default VotingButtonContainer

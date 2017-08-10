@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import Task from './Task'
+
 export function TaskList({tasks}) {
     const taskList = tasks.isEmpty() ?
         'There are currently no estimated tasks.' :

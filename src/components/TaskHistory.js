@@ -3,7 +3,7 @@ import React from 'react'
 import TaskList from './TaskList'
 import ClearTasksButton from './ClearTasksButton'
 
-export default function TaskHistory({clearTasks, taskmaster}) {
+function TaskHistory({taskmaster}) {
     return (
         <div className="task-history">
             <h2 className="title">Estimated Tasks</h2>        
@@ -14,3 +14,5 @@ export default function TaskHistory({clearTasks, taskmaster}) {
         </div>
     )
 }
+
+export default TaskHistory

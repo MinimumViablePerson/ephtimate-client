@@ -23,6 +23,7 @@ export function Voting({task, revealed, taskmaster}) {
             }
         </div>
     )
+
 }
 
 function mapStateToProps(state) {

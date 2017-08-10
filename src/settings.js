@@ -10,4 +10,4 @@ const SERVER_OPTIONS = {
     ec2: 'http://35.177.30.115:8027'
 }
 
-export const SERVER = SERVER_OPTIONS.ec2
+export const SERVER = SERVER_OPTIONS.local

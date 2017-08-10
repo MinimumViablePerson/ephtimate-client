@@ -1,13 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {reveal} from '../actions'
+import * as actionCreators from '../actions'
 import {countVotes} from '../helpers'
 
-let RevealButton = ({dispatch, revealed, votes}) => {
+export function RevealButton({reveal, revealed, votes}) {
     return (
         <button className="primary-btn"
-                onClick={revealed ? null : () => dispatch(reveal())}>
+                onClick={revealed ? null : reveal} >
             Reveal Votes ({votes})
         </button>
     )
@@ -20,6 +20,9 @@ const mapStateToProps = (state) => {
     }
 }
 
-RevealButton = connect(mapStateToProps)(RevealButton)
+const RevealButtonContainer = connect(
+    mapStateToProps,
+    actionCreators
+)(RevealButton)
 
-export default RevealButton
+export default RevealButtonContainer

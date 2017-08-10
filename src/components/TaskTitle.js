@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-let TaskTitle = ({title, revealed}) => {
+export function TaskTitle({title, revealed}) {
     return !title ?
         null :        
         <div className="now-voting">
@@ -19,6 +19,6 @@ function mapStateToProps(state) {
     }
 }
 
-TaskTitle = connect(mapStateToProps)(TaskTitle)
+const TaskTitleContainer = connect(mapStateToProps)(TaskTitle)
 
-export default TaskTitle
+export default TaskTitleContainer
