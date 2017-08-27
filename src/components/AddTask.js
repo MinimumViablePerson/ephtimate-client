@@ -9,7 +9,6 @@ export function AddTask({addTask, task}) {
 
     const addTaskElement = (
         <div className="add-task">
-
             <form onSubmit={(e) => {
                 e.preventDefault()
                 if (input.value.length > 2) {
@@ -17,20 +16,14 @@ export function AddTask({addTask, task}) {
                     input.value = ''
                 }
             }} >
-
                 <input ref={node => input = node} placeholder="Add a task..." />
-
                 <button className="add-btn">
                     Add
                 </button>
-
             </form>
-
         </div>
     )
-
     return task.isEmpty() ? addTaskElement : null
-
 }
 
 const mapStateToProps = (state) => {
